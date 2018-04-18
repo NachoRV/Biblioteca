@@ -3,8 +3,21 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import firebase from 'firebase'
 
 Vue.config.productionTip = false
+
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAyAXG0bFlLzg5nlmcjRX3PALiFDzQFPkc",
+    authDomain: "biblioteca-irv.firebaseapp.com",
+    databaseURL: "https://biblioteca-irv.firebaseio.com",
+    projectId: "biblioteca-irv",
+    storageBucket: "biblioteca-irv.appspot.com",
+    messagingSenderId: "300457440563"
+  };
+  firebase.initializeApp(config);
+
 
 /* eslint-disable no-new */
 new Vue({
