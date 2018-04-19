@@ -17,7 +17,7 @@ import firebase from 'firebase'
 export default {
     name: 'verLibros',
     created(){
-        firebase.database().ref('libros/').once('value',snapshot => this.cargarLibros(snapshot.val()));
+        firebase.database().ref('libros/').on('value',snapshot => this.cargarLibros(snapshot.val()));
     },
  /*   mounted(){
        this.libros =  firebase.database().ref('libros/').once('value',snapshot);
