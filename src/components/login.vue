@@ -4,10 +4,11 @@
       <input type="text" v-model="email" placeholder="email"><br>
       <input type="text" v-model="contrasena" placeholder="Password"><br>
       <button  v-on:click="singIn">Conexion</button>
-      <p> No tienes cuenta <router-link to="/singup"> crea una </router-link> </p>
+      <p> No tienes cuenta <router-link to="/singup"> crear una </router-link> </p>
   </div>
 </template>
 <script>
+
 import firebase from 'firebase'
 export default {
   name: 'login',
