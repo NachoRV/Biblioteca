@@ -5,6 +5,7 @@ import login from '@/components/login'
 import SingUp from '@/components/SingUp'
 import firebase from 'firebase'
 import insertarLibro from '@/components/insertarLibro'
+import verLibros from '@/components/verLibros'
 
 Vue.use(Router)
 
@@ -35,8 +36,19 @@ let router = new Router({
     {
       path: '/insertarlibro',
       name: 'insertarLibro',
-      component: insertarLibro
-    }
+      component: insertarLibro,
+      meta: {
+        requiresAuth: true,
+      }
+    },
+    {
+      path: '/verLibros',
+      name: 'verLibros',
+      component: verLibros,
+      meta: {
+        requiresAuth: true,
+      }
+    },
   ]
  })
 

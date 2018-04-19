@@ -1,6 +1,8 @@
 <template>
 <div>
-  <h1>holašsssss</h1>
+  <h1>Biblioteca</h1>
+ <router-link to="/insertarlibro"> Añadir Libro </router-link>
+ <router-link to="/verLibros"> Ver libros </router-link><br>
   <button v-on:click="logout">Logout</button>
 </div>
 </template>

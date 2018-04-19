@@ -1,5 +1,6 @@
 <template>
 <div>
+    <router-link to="/hola"> Home </router-link><br>
     <input type="text" v-model="libro.titulo" placeholder="Título del libro"><br>
     <input type="text" v-model="libro.autor" placeholder="Autor"><br>
     <input type="text" v-model="libro.editorial" placeholder="Editorial"><br>
@@ -41,6 +42,10 @@ export default {
 </script>
 
 <style scoped>
+input{
+
+    margin: 5px;
+}
 
 </style>
 
