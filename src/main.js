@@ -17,6 +17,7 @@ Vue.config.productionTip = false
     messagingSenderId: "300457440563"
   };
   firebase.initializeApp(config);
+  var database = firebase.database();
   firebase.auth().onAuthStateChanged(function (user) {
 
     if (!app){

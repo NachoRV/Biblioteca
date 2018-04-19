@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import login from '@/components/login'
 import SingUp from '@/components/SingUp'
 import firebase from 'firebase'
+import insertarLibro from '@/components/insertarLibro'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ let router = new Router({
       path: '/singup',
       name: 'SingUp',
       component: SingUp
+    },
+    {
+      path: '/insertarlibro',
+      name: 'insertarLibro',
+      component: insertarLibro
     }
   ]
  })
