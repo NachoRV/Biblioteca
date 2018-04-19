@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import login from '@/components/login'
 import SingUp from '@/components/SingUp'
+import firebase from 'firebase'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   routes: [
     {
       path: '*',
@@ -31,4 +32,14 @@ export default new Router({
       component: SingUp
     }
   ]
+ })
+
+router.beforeEach((to, from, next) => {
+  let currentUser = firebase.auth().currentUser;
+  let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+  if (requiresAuth && !currentUser) next('/login')
+  else if (!requiresAuth && currentUser) next('/hola')
+  else next()
 })
+export default router

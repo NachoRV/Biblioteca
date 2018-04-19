@@ -3,7 +3,7 @@
       <h3>Ingresar</h3>
       <input type="text" v-model="email" placeholder="email"><br>
       <input type="text" v-model="contrasena" placeholder="Password"><br>
-      <button v-on:click="singIn">Conexion</button>
+      <button  v-on:click="singIn">Conexion</button>
       <p> No tienes cuenta <router-link to="/singup"> crea una </router-link> </p>
   </div>
 </template>
@@ -19,12 +19,12 @@ export default {
   },
   methods: {
       login: function(){
-        this.$router.replace('/hola')
+        this.$router.replace('hola')
       },
          singIn: function() {
           firebase.auth().signInWithEmailAndPassword(this.email,this.contrasena).then(
-              function (user) {
-                  alert('Hola estas conectado....')
+             (user)  => {
+                  this.$router.replace('hola')
               },
               function(err){
                   alert('Oops. ' +err.message)
