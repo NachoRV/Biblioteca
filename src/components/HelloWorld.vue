@@ -1,21 +1,20 @@
 <template>
 <div>
+  <Appnav></Appnav>
   <h1>Biblioteca</h1>
- <router-link to="/insertarlibro"> Añadir Libro </router-link>
- <router-link to="/verLibros"> Ver libros </router-link><br>
+<router-link to="/insertarlibro"> Añadir Libro </router-link>
+ <router-link to="/verLibros"> Ver libros </router-link>
   <button v-on:click="logout">Logout</button>
 </div>
+
 </template>
 
 <script>
 import firebase from 'firebase'
+import Appnav from '@/components/AppNav'
 export default {
   name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  },
+  components: { Appnav },
   methods: {
     logout: function(){
       firebase.auth().signOut().then(()=>{
