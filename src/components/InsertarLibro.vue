@@ -33,7 +33,7 @@
         </div>
     </div>
     <button v-on:click="agregarLibro" type="button" class="btn btn-primary">Enviar</button>
-    <pre>{{ $data }}</pre>
+  <!--  <pre>{{ $data }}</pre>-->
 </div>
 
   
@@ -61,11 +61,14 @@ export default {
     methods: {
         agregarLibro() {
             var user = firebase.auth().currentUser.displayName;
-            console.log(user)
-            console.log(this.libro)
             firebase.database().ref('libros/').push(
                 this.libro,
          );
+            this.libro.titulo='',
+            this.libro.autor= "",
+            this.libro.isbn= "",
+            this.libro.editorial="",
+            this.libro.resumen=""
        },
     }
 }

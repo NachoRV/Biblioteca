@@ -2,7 +2,7 @@
   <div class="login">
       <h1>Ingresar</h1>
       <input type="text" v-model="email" placeholder="email"><br>
-      <input type="text" v-model="contrasena" placeholder="Password"><br>
+      <input type="password" v-model="contrasena" placeholder="Password"><br>
       <button  v-on:click="singIn" type="button" class="btn btn-primary">Conexion</button>
       <p> No tienes cuenta <router-link to="/singup"> crear una </router-link> </p>
   </div>

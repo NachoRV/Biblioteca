@@ -1,0 +1,35 @@
+[debug] [2018-04-21T18:44:56.830Z] ----------------------------------------------------------------------
+[debug] [2018-04-21T18:44:56.832Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2018-04-21T18:44:56.832Z] CLI Version:   3.18.4
+[debug] [2018-04-21T18:44:56.832Z] Platform:      darwin
+[debug] [2018-04-21T18:44:56.832Z] Node Version:  v8.11.1
+[debug] [2018-04-21T18:44:56.833Z] Time:          Sat Apr 21 2018 20:44:56 GMT+0200 (CEST)
+[debug] [2018-04-21T18:44:56.833Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-21T18:44:56.843Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2018-04-21T18:44:56.844Z] > authorizing via signed-in user
+[info] 
+     🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥     🔥🔥🔥     🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥
+     🔥🔥        🔥🔥  🔥🔥     🔥🔥 🔥🔥       🔥🔥     🔥🔥  🔥🔥   🔥🔥  🔥🔥       🔥🔥
+     🔥🔥🔥🔥🔥🔥    🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥   🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥
+     🔥🔥        🔥🔥  🔥🔥    🔥🔥  🔥🔥       🔥🔥     🔥🔥 🔥🔥     🔥🔥       🔥🔥 🔥🔥
+     🔥🔥       🔥🔥🔥🔥 🔥🔥     🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥     🔥🔥  🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/nachoroyo
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2018-04-21T18:45:04.520Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+  
+ Sat Apr 21 2018 20:45:04 GMT+0200 (CEST)

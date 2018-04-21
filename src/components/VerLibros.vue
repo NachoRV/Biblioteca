@@ -2,15 +2,24 @@
 <div>
     <Appnav></Appnav>   
     <h1>Lista le de libros</h1>
+    <label for="buscarTitulo">Buscar:</label>
+    <input type="radio" id="titulo" value="titulo" v-model="picked">
+    <label for="titulo">Título</label>
+    <input type="radio" id="editorial" value="editorial" v-model="picked">
+    <label for="editorial">Editorial</label>
+    <input type="radio" id="autor" value="autor" v-model="picked">
+    <label for="editorial">Autor</label>
+    <br>
+    <input type="search" v-model="busqueda" >
     <hr>
-    <div v-for="(libro ,key) in libros" :key="key">
+    <div v-for="(libro ,key) in bucarTitulo" :key="key">
         <div class="card tarjetas">
             <div class="card-body">
             <h4 class="card-title">Titulo: <span contenteditable="true" @blur="actualizarTitulo(libro, $event)" >{{libro.titulo}}</span></h4>
             <p class="card-text" >Autor: <span contenteditable="true" @blur="actualizarAutor(libro, $event)">{{libro.autor}}</span> </p>
             <p class="card-text" >Editorial: <span contenteditable="true" @blur="actualizarEditorial(libro, $event)">{{libro.editorial}} </span>Isbn: <span contenteditable="true" @blur="actualizarIsbn(libro, $event)">{{libro.isbn}}</span> </p>
             <p class="card-text" >Resumen: <span contenteditable="true" @blur="actualizarResumen(libro, $event)">{{libro.resumen}}</span></p>
-            <a href="#" class="card-link">Borrar</a>
+            <button @click="eliminarLibro(libro, $event)">Borrar</button>
             </div>
         </div>
     </div>
@@ -34,6 +43,8 @@ export default {
     data() {
         return{
             libros: [],
+            busqueda:"",
+            picked: "titulo"
             
         }
         
@@ -82,7 +93,31 @@ export default {
                isbn: event.target.innerHTML
            })
        },
+       eliminarLibro(libro, event) {
+           console.log(libro)
+          
+          if(confirm("¿Seguro que quieres borrar el libro?"))
+          firebase.database().ref('libros/'+libro.key).remove();
+               
+           
+       },
        
+    },
+    computed: {
+        bucarTitulo(){
+            return this.libros.filter((lib) =>{
+                if (this.picked == "titulo"){
+                  return lib.titulo.includes(this.busqueda)  
+                }else if (this.picked == "editorial") {
+                    return lib.editorial.includes(this.busqueda)
+                }else{
+                    return lib.autor.includes(this.busqueda)
+                }
+                
+
+            })
+
+        }
     }
        
 }

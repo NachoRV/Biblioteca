@@ -2,9 +2,9 @@
 <div>
   <Appnav></Appnav>
   <h1>Biblioteca</h1>
-<router-link to="/insertarlibro"> Añadir Libro </router-link>
+<!--<router-link to="/insertarlibro"> Añadir Libro </router-link>
  <router-link to="/verLibros"> Ver libros </router-link>
-  <button v-on:click="logout">Logout</button>
+  <button v-on:click="logout">Logout</button>-->
 </div>
 
 </template>
