@@ -26,12 +26,19 @@
             <input type="text" v-model="libro.isbn" class="form-control"  placeholder="ISBN">
         </div>
     </div>
+      <div class="form-group row">
+        <label  class="col-sm-3 col-form-label">Posición</label>
+        <div class="col-sm-8">
+           <input type="text" v-model="libro.posicion" class="form-control"  placeholder="posicion">
+        </div>
+    </div>
      <div class="form-group row">
         <label  class="col-sm-3 col-form-label">Resumen</label>
         <div class="col-sm-8">
             <textarea rows="4" cols="50" v-model="libro.resumen" class="form-control" ></textarea>
         </div>
     </div>
+
     <button v-on:click="agregarLibro" type="button" class="btn btn-primary">Enviar</button>
   <!--  <pre>{{ $data }}</pre>-->
 </div>
@@ -53,6 +60,7 @@ export default {
                     isbn: "",
                     editorial: "",
                     resumen: "",
+                    posicion: "",
                     user: firebase.auth().currentUser.uid,
 
                 }
@@ -68,6 +76,7 @@ export default {
             this.libro.autor= "",
             this.libro.isbn= "",
             this.libro.editorial="",
+            this.libro.posicion="",
             this.libro.resumen=""
        },
     }

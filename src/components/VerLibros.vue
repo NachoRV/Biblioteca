@@ -18,20 +18,23 @@
             <h4 class="card-title">Titulo: <span contenteditable="true" @blur="actualizarTitulo(libro, $event)" >{{libro.titulo}}</span></h4>
             <p class="card-text" >Autor: <span contenteditable="true" @blur="actualizarAutor(libro, $event)">{{libro.autor}}</span> </p>
             <p class="card-text" >Editorial: <span contenteditable="true" @blur="actualizarEditorial(libro, $event)">{{libro.editorial}} </span>Isbn: <span contenteditable="true" @blur="actualizarIsbn(libro, $event)">{{libro.isbn}}</span> </p>
+            <p class="card-text" >Posicion: <span contenteditable="true" @blur="actualizarPosicion(libro, $event)">{{libro.posicion}} </span></p>
             <p class="card-text" >Resumen: <span contenteditable="true" @blur="actualizarResumen(libro, $event)">{{libro.resumen}}</span></p>
             <button @click="eliminarLibro(libro, $event)">Borrar</button>
             </div>
         </div>
-    </div>
+    </div>  
+    <top></top>
 </div> 
 </template>
 <script>
 import firebase from 'firebase'
 import Appnav from '@/components/AppNav'
+import top from '@/components/top'
 
 export default {
     name: 'verLibros',
-    components: { Appnav },
+    components: { Appnav, top },
     created(){
         firebase.database().ref('libros/').on('value',snapshot => this.cargarLibros(snapshot.val()));
     },
@@ -44,8 +47,7 @@ export default {
         return{
             libros: [],
             busqueda:"",
-            picked: "titulo"
-            
+            picked: "titulo", 
         }
         
     },
@@ -55,7 +57,12 @@ export default {
             this.libros = [];
             for ( let key in men){
                 if(men[key].user === user){
-               
+                 if(men[key].posicion = 'null'){
+                    var pos = " - ";
+                    console.log("en if uno". posicion);
+                 } else {
+                     pos = men[key].posicion;
+                 }
                     this.libros.push({
                         titulo: men[key].titulo,
                         autor:  men[key].autor,
@@ -63,6 +70,7 @@ export default {
                         editorial:  men[key].editorial,
                         resumen: men[key].resumen,
                         user: men[key].user,
+                        posicion: pos,
                         key: key
                     });
                 }
@@ -91,6 +99,11 @@ export default {
          actualizarIsbn(libro, event) {
            firebase.database().ref('libros/'+libro.key).update({
                isbn: event.target.innerHTML
+           })
+       },
+       actualizarPosicion(libro, event) {
+           firebase.database().ref('libros/'+libro.key).update({
+               posicion: event.target.innerHTML
            })
        },
        eliminarLibro(libro, event) {
