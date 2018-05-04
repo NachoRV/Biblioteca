@@ -55,9 +55,10 @@ export default {
         cargarLibros(men) {
             const user = firebase.auth().currentUser.uid;
             this.libros = [];
+           
             for ( let key in men){
                 if(men[key].user === user){
-                 if(men[key].posicion = 'null'){
+                 if(men[key].posicion === 'null' ){
                     var pos = " - ";
                     console.log("en if uno". posicion);
                  } else {
@@ -104,7 +105,9 @@ export default {
        actualizarPosicion(libro, event) {
            firebase.database().ref('libros/'+libro.key).update({
                posicion: event.target.innerHTML
+               
            })
+           console.log( libro)
        },
        eliminarLibro(libro, event) {
            console.log(libro)
