@@ -18,7 +18,7 @@
             <h4 class="card-title">Titulo: <span contenteditable="true" @blur="actualizarTitulo(libro, $event)" >{{libro.titulo}}</span></h4>
             <p class="card-text" >Autor: <span contenteditable="true" @blur="actualizarAutor(libro, $event)">{{libro.autor}}</span> </p>
             <p class="card-text" >Editorial: <span contenteditable="true" @blur="actualizarEditorial(libro, $event)">{{libro.editorial}} </span>Isbn: <span contenteditable="true" @blur="actualizarIsbn(libro, $event)">{{libro.isbn}}</span> </p>
-            <p class="card-text" >Posicion: <span contenteditable="true" @blur="actualizarPosicion(libro, $event)">{{libro.posicion}} </span></p>
+            <p class="card-text" >Posicion: <span class= "input" contenteditable="true" @blur="actualizarPosicion(libro, $event)">{{libro.posicion}} </span></p>
             <p class="card-text" >Resumen: <span contenteditable="true" @blur="actualizarResumen(libro, $event)">{{libro.resumen}}</span></p>
             <button @click="eliminarLibro(libro, $event)">Borrar</button>
             </div>
@@ -54,6 +54,7 @@ export default {
     methods: {
         cargarLibros(men) {
             const user = firebase.auth().currentUser.uid;
+            //const user = 'hGxzAX1i5Dgembqtk5qep8Iptal1'
             this.libros = [];
            
             for ( let key in men){
@@ -144,5 +145,9 @@ h1{
 }
 .tarjetas{
     margin: 10px;
+}
+.input{
+    border: 3px;
+    border-color: black;
 }
 </style>
