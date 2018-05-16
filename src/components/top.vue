@@ -1,18 +1,34 @@
 <template>
-<button class="top">  <a href="#">up!</a></button>
-  
+<button class=" top btn btn-primary">  <a href="#">Up!</a></button>
+   
 </template>
 <script>
 export default {
     name: 'top',
   
 }
+
 </script>
 <style scpped>
-.tpp{ 
+a:link{
+    text-decoration: none;
+    
+}
+a{
+    color: white ;
+}
+.top{ 
+    
+    position: fixed;
+    bottom: 2em;
+    right: 2rem;    
+    padding: 1em;
+    border-radius: 50%;
 
- position: fixed;
- left: 15px;
- bottom: 15px;
+   /* display: none; */
+}
+
+.top:hover {    
+    background-color: rgba(135, 135, 135, 0.50);
 }
 </style>
